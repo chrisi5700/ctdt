@@ -58,7 +58,7 @@ Keep in mind the representation of the variable is just for printing and has no 
 
 ## Todo (in order of priority):
 
-- Better system for simplifications often inverses arent cancelled properly
+- Better system for simplifications often inverses aren't cancelled properly
   
   - This issue can be entirely avoided by compiling with -ffast-math
 
