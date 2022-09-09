@@ -146,7 +146,12 @@ struct name\
 \
     using Type = T;\
 \
-    static constexpr auto function = []<std::convertible_to<T> ...Ts>(Ts... args){SE1::function(args...) op SE2::function(args...);};\
+    static constexpr auto function = []<std::convertible_to<T> ...Ts>(Ts... args){return SE1::function(args...) op SE2::function(args...);};\
+    template<std::convertible_to<T> ...Ts>\
+    T operator()(Ts... args)\
+    {\
+        return function(args...);\
+    }\
 };\
 \
 template<Expression E1, Expression E2>\
@@ -274,7 +279,12 @@ struct name##_impl\
 \
     using Type = T;\
 \
-    static constexpr auto function = []<std::convertible_to<T> ...Ts>(Ts... args){func (SE1::function(args...));};\
+    static constexpr auto function = []<std::convertible_to<T> ...Ts>(Ts... args){return func (SE1::function(args...));};\
+    template<std::convertible_to<T> ...Ts>\
+    T operator()(Ts... args)\
+    {\
+        return function(args...);\
+    }\
 };\
 \
 template<Expression E1>\
