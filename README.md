@@ -16,7 +16,7 @@
 
 The ID is used if you want to differentiate the function with respect to that variable and will also determine the place of the variable when calling the function.
 
-Keep in mind the representation of the variable is just for printing and has no other uses besides that. The underlying type **must** be constructible from 0 and 1.
+Keep in mind the representation of the variable is just for printing and has no other uses besides that. The underlying type **must** be constructible from *int* and must support arithmetic operations.
 
 
 
