@@ -62,8 +62,8 @@ Keep in mind the representation of the variable is just for printing and has no 
   
   - This issue can be entirely avoided by compiling with -ffast-math
 
-- Tan, Sinh, Cosh, Tanh, Pow (^)  (makes sense to implement after rewriting the simplification system)
+- Pow (^)
 
-- 
+
 
 
