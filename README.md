@@ -24,7 +24,7 @@ Keep in mind the representation of the variable is just for printing and has no 
 
 
 
-(3)    $f$ can be invoked like any other function. Here this call would resolve to $f(0, 0) = \sin{(e^0 \cdot 0)} = 0$ . Notice that the third argument (42) is ignored because there is no variable defined that has the ID 2. 
+(3)    $f$ can be invoked like any other function. Here this call would resolve to $f(0, 0) = \sin{(e^0 \cdot 0)} = 0$ . Notice that the third argument (42) is ignored because there is no variable defined that has the ID 2. 
 
 
 
