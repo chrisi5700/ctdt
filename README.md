@@ -48,7 +48,9 @@ Keep in mind the representation of the variable is just for printing and has no 
 
 - Unary Functions:
   
-  - Sin, Cos
+  - Sin, Cos, Tan
+  
+  - Sinh, Cosh, Tanh
   
   -  Exp, Ln
   
