@@ -7,6 +7,7 @@ int main()
 {
     Variable<double, 0, 'x'> x;
     Variable<double, 1, 'y'> y;
-    auto f = x - y * y;
-    std::cout << f << '\n' << derivative<1>(f) << '\n';
+    Constant<double, 2.0> two;
+    auto f = two ^ x;
+    std::cout << f << '\n' << derivative<0>(f) << '\n';
 }

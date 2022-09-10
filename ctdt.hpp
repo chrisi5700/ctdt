@@ -112,6 +112,12 @@ constexpr bool is_atomic<Constant<T, V>> = true;
 template <MathType T, std::size_t V, char R>
 constexpr bool is_atomic<Variable<T, V, R>> = true;
 
+template<Expression E>
+constexpr bool is_constant = false;
+
+template <MathType T, T V>
+constexpr bool is_constant<Constant<T, V>> = true;
+
 // Used for macro fiddeling    (removing braces from type in macro)
 // Macro(T) argument_type<void(T)>::type == Macro((ConcT<T1, T2>)) -> argument_type<void((ConcT<T1, T2>))>::type -> ConcT<T1, T2>
 template <typename T>
@@ -454,4 +460,59 @@ StartUnaryFunctionSimplification(Tanh)
 GenerateUnaryFunctionDerivative(Tanh, (Div<T, DE1, Mul<T, Cosh_impl<T, SE1>, Cosh_impl<T, SE1>>>));
 
 
+// ------------------------------------------------- Pow, (^) -------------------------------------------------
+
+template <MathType T, Expression E1, Expression E2>
+struct Pow_impl
+{
+    using SE1 = simplified<E1>;
+    using SE2 = simplified<E2>;
+    template <std::size_t DVar>
+    using DE1 = decltype(derivative<DVar>(SE1{}));
+
+    template <std::size_t DVar>
+    using DE2 = decltype(derivative<DVar>(SE2{}));
+
+    using Type = T;
+    static constexpr auto function = []<std::convertible_to<T>... Ts>(Ts... args) { return std::pow(SE1::function(args...), SE2::function(args...)); };
+    template <std::convertible_to<T>... Ts>
+    T operator()(Ts... args) { return function(args...); }
+};
+
+template <Expression E1, Expression E2>
+auto operator^(E1, E2)
+{
+    static_assert(std::same_as<typename E1::Type, typename E2::Type>);
+    return Pow_impl<typename E1::Type, E1, E2>{};
+}
+template <MathType T, Expression E1, Expression E2>
+std::ostream &operator<<(std::ostream &os, Pow_impl<T, E1, E2>) { return os << "(" << E1{} << ")^(" << E2{} << ')'; }
+
+template <MathType T, T V1, T V2>
+auto simplify(Pow_impl<T, Constant<T, V1>, Constant<T, V1>>) { return Constant<T, std::pow(V1, V2)>{}; };
+
+template <std::size_t DVar, MathType T, Expression E1, Expression E2>
+auto derivative(Pow_impl<T, E1, E2>)
+{
+    // (f^g)' = f^(g-1)(f'g + g'f ln(f))
+    using E = Pow_impl<T, E1, E2>;
+    using DE1 = typename E::template DE1<DVar>;
+    using DE2 = typename E::template DE2<DVar>;
+
+    using SE1 = decltype(simplify(E1{}));
+    using SE2 = decltype(simplify(E2{}));
+
+    using DT = Mul<T, Pow_impl<T, SE1, Sub<T, SE2, One<T>>>, Add<T, Mul<T, DE1, SE2>, Mul<T, DE2, Mul<T, SE1, Ln_impl<T, SE1>>>>>;   // lord have mercy
+    return simplify(DT{});
+};
+
+template <Expression E1, Expression E2>
+auto Pow(E1, E2) 
+{
+    static_assert(std::same_as<typename E1::Type, typename E2::Type>);
+    return Pow_impl<typename E1::Type, E1, E2>{};
+}
+
+StartBinaryOperatorSimplification(Pow_impl)
+EndBinaryOperatorSimplification(Pow_impl);
 #endif
