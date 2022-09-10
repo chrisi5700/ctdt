@@ -6,7 +6,7 @@
 
 ## Information:
 
-To run CTDT you need to use GCC 11 or higher to support floating point and class type NTTP. CTDT also uses compile time <cmath> functions to simplify expressions like:
+To run CTDT you need to use GCC 11 or higher to support floating point and class type NTTP. CTDT also uses compile time `<cmath>` functions to simplify expressions like:
 
 $f(x) \cdot \sin(0) = 0$  
 
