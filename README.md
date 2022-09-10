@@ -40,7 +40,7 @@ Keep in mind the representation of the variable is just for printing and has no 
 
 - Variables:     Variable<Type, ID, Representation>
 
-- Basic Arithmetic (+, -, *, /) 
+- Basic Arithmetic (+, -, *, /, ^) 
 
 - Constants: 
   
