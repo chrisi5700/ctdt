@@ -21,28 +21,22 @@
 	TotalVirtualMemory="2047"
 	TotalPhysicalMemory="15943"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="2739.45"
+	ProcessorClockFrequency="2565.45"
 	>
 	<Testing>
-		<StartDateTime>Sep 11 19:23 CEST</StartDateTime>
-		<StartTestTime>1662916987</StartTestTime>
+		<StartDateTime>Sep 11 20:34 CEST</StartDateTime>
+		<StartTestTime>1662921268</StartTestTime>
 		<TestList>
 			<Test>./tests/BinaryOperators</Test>
 		</TestList>
-		<Test Status="failed">
+		<Test Status="passed">
 			<Name>BinaryOperators</Name>
 			<Path>./tests</Path>
 			<FullName>./tests/BinaryOperators</FullName>
 			<FullCommandLine>/home/chris/Documents/cpp/CTDerivatives/build/tests/binaryop</FullCommandLine>
 			<Results>
-				<NamedMeasurement type="text/string" name="Exit Code">
-					<Value>Failed</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Exit Value">
-					<Value>1</Value>
-				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.00193926</Value>
+					<Value>0.00282823</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -57,12 +51,12 @@
 					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
 				</NamedMeasurement>
 				<Measurement>
-					<Value encoding="base64" compression="gzip">eJyNUstOwzAQvPsr9kilNg4NQmokDhVpEeKppohD1IOTbIklxw6xndK/x2lQoUWhzG09M/bOepOrPVawsFJy+QYXYFAbDetalXC+K0BbbtAjyWiPFdwIlTLR8SgbXitZonRaNCNbHYkPLp1bmRmupCYJLF4eYYfV97E3zXNHdXi6O6bgzIdSD/rMsU37zI46YX6wos/sqBPmiDeEFqpEmhU11zRSmW1HomlWVfR6GWHNG2Z4g5ruxkFTLlm9VZXnBGEwCWHOuLA1ktlHhZnBHPDdMsHNFtQaTIEaoWHCog4JwPpsPIRgQNo+XgueFcB1CL6rx55PA88/ZrzLDpM243x6ez+LfiXYZzz9fZ0UjDJMDMj/tsMgq0e52kiS/Fy+3qWDmknv8CHX+/M0jrveg87oHSbqbhiC4LodYopCbcI/QhPiLF/cchYvySfo/Owc====</Value>
+					<Value encoding="base64" compression="gzip">eJyFk7uOwjAQRXt/xZRQJEKIgoYCKbsUiIeIqKIUhnhXlpIx8iP8PoagYByMp4mSM2esuYqLRV8lHAwix3+Yg2ZKK/iTooHp4wWU4faZkiLpq4RVLU607hoYtlwKbBjaZqYTc/GaZ+7UX4NnzQUqUsDhuIVHla/P6bKqLOpqt/YRjCbQqHFIzs0pJFsUkTemDskWReSMtyHZol6O59K1ghaa1mPyxciY5C3VvGVelg4YpunBj1u5PYNEPRgdMEjVg9EBg2Q9GM/WEb6lG/qpNaMyqcQVSeFemvBlAUkxfT/JLrBf5vlPdt/uaabkBvIHB8M=</Value>
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>Sep 11 19:23 CEST</EndDateTime>
-		<EndTestTime>1662916987</EndTestTime>
+		<EndDateTime>Sep 11 20:34 CEST</EndDateTime>
+		<EndTestTime>1662921268</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

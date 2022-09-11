@@ -1,4 +1,3 @@
 Collision 2 0.00175459
-BinaryOperators 2 0.00271817
+BinaryOperators 7 0.00244797
 ---
-BinaryOperators

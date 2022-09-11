@@ -41,6 +41,58 @@ TEST(Functions, Div)
     EXPECT_FLOAT_EQ(f(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55), 0);
 }
 
+TEST(Derivatives, Add)
+{
+    Variable<double, 0, 'x'> x;
+    Variable<double, 1, 'y'> y;
+    auto f = x + y;
+    auto dx = derivative<0>(f); // 1 + 0
+    auto dy = derivative<1>(f); // 0 + 1
+
+    EXPECT_FLOAT_EQ(dx(0, 0), 1.0);
+    EXPECT_FLOAT_EQ(dy(0, 0), 1.0);
+
+}
+
+TEST(Derivatives, Sub)
+{
+    Variable<double, 0, 'x'> x;
+    Variable<double, 1, 'y'> y;
+    auto f = x - y;
+    auto dx = derivative<0>(f); // 1 + 0
+    auto dy = derivative<1>(f); // 0 + 1
+
+    EXPECT_FLOAT_EQ(dx(0, 0), 1.0);
+    EXPECT_FLOAT_EQ(dy(0, 0), -1.0);
+}
+
+TEST(Derivatives, Mul)
+{
+    Variable<double, 0, 'x'> x;
+    Variable<double, 1, 'y'> y;
+    auto f = x * y;
+    auto dx = derivative<0>(f); // y
+    auto dy = derivative<1>(f); 
+
+    EXPECT_FLOAT_EQ(dx(0, 5), 5.0);
+    EXPECT_FLOAT_EQ(dx(0, -1), -1.0);
+    EXPECT_FLOAT_EQ(dy(1, 0), 1.0);
+    EXPECT_FLOAT_EQ(dy(2, 0), 2.0);
+}
+
+TEST(Derivatives, Div)
+{
+    Variable<double, 0, 'x'> x;
+    Variable<double, 1, 'y'> y;
+    auto f = x / y;
+    auto dx = derivative<0>(f); // 1/y 
+    auto dy = derivative<1>(f); // -x/y²
+
+    EXPECT_FLOAT_EQ(dx(0, 5), 1.0/5.0);
+    EXPECT_FLOAT_EQ(dx(0, -1), -1.0);
+    EXPECT_FLOAT_EQ(dy(1, 2), -1.0/(2.0 * 2.0));
+    EXPECT_FLOAT_EQ(dy(2, 10), -2.0/(10.0 * 10.0));
+}
 
 
 int main(int argc, char **argv)

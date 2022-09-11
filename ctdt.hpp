@@ -35,6 +35,11 @@ struct Constant
 {
     static constexpr auto function = []<std::convertible_to<T>... Ts>(Ts...) { return Value; };
     using Type = T; // used for operator overloads
+    template <std::convertible_to<T>... Ts>                                                                                                     
+    T operator()(Ts... args)                                                                                                                    
+    {                                                                                                                                           
+        return function(args...);                                                                                                               
+    }  
 };
 
 template <MathType T>
@@ -69,8 +74,14 @@ auto simplify(Constant<T, Val>)
 template <MathType T, std::size_t Var, char Repr = '\0'>
 struct Variable
 {
-    static constexpr auto function = []<std::convertible_to<T>... Ts>(Ts... args) { return std::get<Var>(std::tuple<Ts...>{args...}); };
+    static constexpr auto function = []<std::convertible_to<T>... Ts>(Ts... args) { return static_cast<T>(std::get<Var>(std::tuple<Ts...>{args...})); };
     using Type = T; // used for operator overloads
+
+    template <std::convertible_to<T>... Ts>                                                                                                     
+    T operator()(Ts... args)                                                                                                                    
+    {                                                                                                                                           
+        return function(args...);                                                                                                               
+    }  
 };
 
 template <MathType T, std::size_t Var, char Repr>
@@ -266,6 +277,9 @@ std::ostream &operator<<(std::ostream &os, UnaryMinus<T, E1>) { return os << "-(
 
 template <MathType T, T V1>
 auto simplify(UnaryMinus<T, Constant<T, V1>>) { return Constant<T, -V1>{}; };
+
+template <MathType T, Expression E1>
+auto simplify(UnaryMinus<T, E1>) {return UnaryMinus<T, E1>{};}
 
 template <std::size_t DVar, MathType T, Expression E1>
 auto derivative(UnaryMinus<T, E1>)
