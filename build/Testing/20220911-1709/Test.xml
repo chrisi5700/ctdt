@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-x86_64-linux-gnu-g++-11"
+	BuildStamp="20220911-1709-Experimental"
+	Name="chris-B450M-GAMING"
+	Generator="ctest-3.22.1"
+	CompilerName="/bin/x86_64-linux-gnu-g++-11"
+	CompilerVersion="11.2.0"
+	OSName="Linux"
+	Hostname="chris-B450M-GAMING"
+	OSRelease="5.15.0-47-generic"
+	OSVersion="#51-Ubuntu SMP Thu Aug 11 07:51:15 UTC 2022"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="23"
+	ModelID="8"
+	ProcessorCacheSize="512"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="2047"
+	TotalPhysicalMemory="15943"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2739.45"
+	>
+	<Testing>
+		<StartDateTime>Sep 11 19:23 CEST</StartDateTime>
+		<StartTestTime>1662916987</StartTestTime>
+		<TestList>
+			<Test>./tests/BinaryOperators</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>BinaryOperators</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/BinaryOperators</FullName>
+			<FullCommandLine>/home/chris/Documents/cpp/CTDerivatives/build/tests/binaryop</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.00193926</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/chris/Documents/cpp/CTDerivatives/build/tests/binaryop</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNUstOwzAQvPsr9kilNg4NQmokDhVpEeKppohD1IOTbIklxw6xndK/x2lQoUWhzG09M/bOepOrPVawsFJy+QYXYFAbDetalXC+K0BbbtAjyWiPFdwIlTLR8SgbXitZonRaNCNbHYkPLp1bmRmupCYJLF4eYYfV97E3zXNHdXi6O6bgzIdSD/rMsU37zI46YX6wos/sqBPmiDeEFqpEmhU11zRSmW1HomlWVfR6GWHNG2Z4g5ruxkFTLlm9VZXnBGEwCWHOuLA1ktlHhZnBHPDdMsHNFtQaTIEaoWHCog4JwPpsPIRgQNo+XgueFcB1CL6rx55PA88/ZrzLDpM243x6ez+LfiXYZzz9fZ0UjDJMDMj/tsMgq0e52kiS/Fy+3qWDmknv8CHX+/M0jrveg87oHSbqbhiC4LodYopCbcI/QhPiLF/cchYvySfo/Owc====</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Sep 11 19:23 CEST</EndDateTime>
+		<EndTestTime>1662916987</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

@@ -1,0 +1,2 @@
+/bin/x86_64-linux-gnu-ar qc libCTDT.a 
+/bin/x86_64-linux-gnu-ranlib libCTDT.a

@@ -33,7 +33,4 @@
 
 *.vscode
 CTDT.md
-<<<<<<< HEAD
-CTDT.md
-=======
->>>>>>> 3236168a55ede0225e14be72f9ae514abcb39d74
+_t.cpp

@@ -1,0 +1,44 @@
+Start testing: Sep 11 19:23 CEST
+----------------------------------------------------------
+1/1 Testing: BinaryOperators
+1/1 Test: BinaryOperators
+Command: "/home/chris/Documents/cpp/CTDerivatives/build/tests/binaryop"
+Directory: /home/chris/Documents/cpp/CTDerivatives/build/tests
+"BinaryOperators" start time: Sep 11 19:23 CEST
+Output:
+----------------------------------------------------------
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from Functions
+[ RUN      ] Functions.Add
+[       OK ] Functions.Add (0 ms)
+[ RUN      ] Functions.Sub
+[       OK ] Functions.Sub (0 ms)
+[ RUN      ] Functions.Mul
+[       OK ] Functions.Mul (0 ms)
+[ RUN      ] Functions.Div
+/home/chris/Documents/cpp/CTDerivatives/tests/binaryop.cpp:39: Failure
+Expected equality of these values:
+  f(2, 3)
+    Which is: 0
+  2.0/3.0
+    Which is: 0.66666669
+[  FAILED  ] Functions.Div (0 ms)
+[----------] 4 tests from Functions (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Functions.Div
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"BinaryOperators" end time: Sep 11 19:23 CEST
+"BinaryOperators" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 11 19:23 CEST

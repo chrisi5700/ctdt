@@ -1,0 +1,1 @@
+/bin/x86_64-linux-gnu-g++-11 -g -rdynamic CMakeFiles/Test1.dir/test1.cpp.o -o Test1  ../lib/libgtest_maind.a ../lib/libgtestd.a 

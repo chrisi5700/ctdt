@@ -112,7 +112,7 @@ constexpr bool is_atomic<Constant<T, V>> = true;
 template <MathType T, std::size_t V, char R>
 constexpr bool is_atomic<Variable<T, V, R>> = true;
 
-template<Expression E>
+template <Expression E>
 constexpr bool is_constant = false;
 
 template <MathType T, T V>
@@ -408,17 +408,16 @@ StartUnaryFunctionSimplification(Cos)
 GenerateUnaryFunctionDerivative(Sin, (Mul<T, Cos_impl<T, SE1>, DE1>));                         // (sin(f))' = cos(f) * f'
 GenerateUnaryFunctionDerivative(Cos, (Mul<T, Mul<T, NegativeOne<T>, Sin_impl<T, SE1>>, DE1>)); // (cos(f))' = -sin(f) * f'
 
-
 GenerateUnaryFunction(Tan, std::tan);
 StartUnaryFunctionSimplification(Tan)
     EndUnaryFunctionSimplification(Tan);
 
 GenerateUnaryFunctionDerivative(Tan, (Div<T, DE1, Mul<T, Cos_impl<T, SE1>, Cos_impl<T, SE1>>>)) // (tan(f))' = f'/(cos(f) * cos(f))
 
-// ------------------------------------------------- exp / ln Function -------------------------------------------------
-// todo: add inverses maybe theres a smooth way to do it for multiple function types requires minor rewrite otherwise...
+    // ------------------------------------------------- exp / ln Function -------------------------------------------------
+    // todo: add inverses maybe theres a smooth way to do it for multiple function types requires minor rewrite otherwise...
 
-GenerateUnaryFunction(Exp, std::exp);
+    GenerateUnaryFunction(Exp, std::exp);
 StartUnaryFunctionSimplification(Exp)
     EndUnaryFunctionSimplification(Exp);
 GenerateUnaryFunctionDerivative(Exp, (Mul<T, Exp_impl<T, SE1>, DE1>));
@@ -427,7 +426,6 @@ GenerateUnaryFunction(Ln, std::log);
 StartUnaryFunctionSimplification(Ln)
     EndUnaryFunctionSimplification(Ln);
 GenerateUnaryFunctionDerivative(Ln, (Div<T, DE1, SE1>));
-
 
 // ------------------------------------------------- Sqrt / Cbrt -------------------------------------------------
 
@@ -440,7 +438,6 @@ GenerateUnaryFunction(Cbrt, std::cbrt);
 StartUnaryFunctionSimplification(Cbrt)
     EndUnaryFunctionSimplification(Cbrt);
 GenerateUnaryFunctionDerivative(Cbrt, (Div<T, DE1, Mul<T, Constant<T, T{3}>, Mul<T, Cbrt_impl<T, SE1>, Cbrt_impl<T, SE1>>>>));
-
 
 // ------------------------------------------------- Sinh, Cosh, Tanh -------------------------------------------------
 GenerateUnaryFunction(Sinh, std::sinh);
@@ -458,7 +455,6 @@ GenerateUnaryFunction(Tanh, std::tanh);
 StartUnaryFunctionSimplification(Tanh)
     EndUnaryFunctionSimplification(Tanh);
 GenerateUnaryFunctionDerivative(Tanh, (Div<T, DE1, Mul<T, Cosh_impl<T, SE1>, Cosh_impl<T, SE1>>>));
-
 
 // ------------------------------------------------- Pow, (^) -------------------------------------------------
 
@@ -502,17 +498,21 @@ auto derivative(Pow_impl<T, E1, E2>)
     using SE1 = decltype(simplify(E1{}));
     using SE2 = decltype(simplify(E2{}));
 
-    using DT = Mul<T, Pow_impl<T, SE1, Sub<T, SE2, One<T>>>, Add<T, Mul<T, DE1, SE2>, Mul<T, DE2, Mul<T, SE1, Ln_impl<T, SE1>>>>>;   // lord have mercy
+    using DT = Mul<T, Pow_impl<T, SE1, Sub<T, SE2, One<T>>>, Add<T, Mul<T, DE1, SE2>, Mul<T, DE2, Mul<T, SE1, Ln_impl<T, SE1>>>>>; // lord have mercy
     return simplify(DT{});
 };
 
 template <Expression E1, Expression E2>
-auto Pow(E1, E2) 
+auto Pow(E1, E2)
 {
     static_assert(std::same_as<typename E1::Type, typename E2::Type>);
     return Pow_impl<typename E1::Type, E1, E2>{};
 }
 
 StartBinaryOperatorSimplification(Pow_impl)
+    AddSimplification((std::same_as<SE2, Zero<T>>), (One<T>))   // x⁰ = 1
+    AddSimplification((std::same_as<SE2, One<T>>), SE1)         // x¹ = x
+    AddSimplification((std::same_as<SE1, Zero<T>>), Zero<T>)    // 0^y = 0
+    AddSimplification((std::same_as<SE1, One<T>>), One<T>)      // 1^y = 1
 EndBinaryOperatorSimplification(Pow_impl);
 #endif

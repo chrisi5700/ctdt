@@ -1,0 +1,1 @@
+/bin/x86_64-linux-gnu-g++-11 -g -rdynamic CMakeFiles/binaryop.dir/binaryop.cpp.o -o binaryop  ../lib/libgtest_maind.a ../lib/libgtestd.a 
