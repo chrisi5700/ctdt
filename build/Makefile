@@ -582,6 +582,19 @@ binaryop/fast:
 .PHONY : binaryop/fast
 
 #=============================================================================
+# Target rules for targets named unaryop
+
+# Build rule for target.
+unaryop: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unaryop
+.PHONY : unaryop
+
+# fast build rule for target.
+unaryop/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unaryop.dir/build.make tests/CMakeFiles/unaryop.dir/build
+.PHONY : unaryop/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -682,6 +695,7 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... unaryop"
 .PHONY : help
 
 

@@ -205,6 +205,20 @@ binaryop/fast:
 	cd /home/chris/Documents/cpp/CTDerivatives/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/binaryop.dir/build.make tests/CMakeFiles/binaryop.dir/build
 .PHONY : binaryop/fast
 
+# Convenience name for target.
+tests/CMakeFiles/unaryop.dir/rule:
+	cd /home/chris/Documents/cpp/CTDerivatives/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/unaryop.dir/rule
+.PHONY : tests/CMakeFiles/unaryop.dir/rule
+
+# Convenience name for target.
+unaryop: tests/CMakeFiles/unaryop.dir/rule
+.PHONY : unaryop
+
+# fast build rule for target.
+unaryop/fast:
+	cd /home/chris/Documents/cpp/CTDerivatives/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unaryop.dir/build.make tests/CMakeFiles/unaryop.dir/build
+.PHONY : unaryop/fast
+
 binaryop.o: binaryop.cpp.o
 .PHONY : binaryop.o
 
@@ -229,6 +243,30 @@ binaryop.cpp.s:
 	cd /home/chris/Documents/cpp/CTDerivatives/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/binaryop.dir/build.make tests/CMakeFiles/binaryop.dir/binaryop.cpp.s
 .PHONY : binaryop.cpp.s
 
+unaryop.o: unaryop.cpp.o
+.PHONY : unaryop.o
+
+# target to build an object file
+unaryop.cpp.o:
+	cd /home/chris/Documents/cpp/CTDerivatives/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unaryop.dir/build.make tests/CMakeFiles/unaryop.dir/unaryop.cpp.o
+.PHONY : unaryop.cpp.o
+
+unaryop.i: unaryop.cpp.i
+.PHONY : unaryop.i
+
+# target to preprocess a source file
+unaryop.cpp.i:
+	cd /home/chris/Documents/cpp/CTDerivatives/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unaryop.dir/build.make tests/CMakeFiles/unaryop.dir/unaryop.cpp.i
+.PHONY : unaryop.cpp.i
+
+unaryop.s: unaryop.cpp.s
+.PHONY : unaryop.s
+
+# target to generate assembly for a file
+unaryop.cpp.s:
+	cd /home/chris/Documents/cpp/CTDerivatives/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/unaryop.dir/build.make tests/CMakeFiles/unaryop.dir/unaryop.cpp.s
+.PHONY : unaryop.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -245,9 +283,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... binaryop"
+	@echo "... unaryop"
 	@echo "... binaryop.o"
 	@echo "... binaryop.i"
 	@echo "... binaryop.s"
+	@echo "... unaryop.o"
+	@echo "... unaryop.i"
+	@echo "... unaryop.s"
 .PHONY : help
 
 

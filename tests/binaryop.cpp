@@ -41,6 +41,16 @@ TEST(Functions, Div)
     EXPECT_FLOAT_EQ(f(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55), 0);
 }
 
+TEST(Functions, Pow)
+{
+    Variable<double, 0, 'x'> x;
+    Variable<double, 1, 'y'> y;
+    auto f = x ^ y;
+    EXPECT_NEAR(f(2, 3), 8.0, 0.00001); // 2³ = 8
+    EXPECT_NEAR(f(1, 5), 1.0, 0.00001); // 1⁵ = 1
+    EXPECT_NEAR(f(0, 12), 0.0, 0.00001); // 0¹² = 0;
+}
+
 TEST(Derivatives, Add)
 {
     Variable<double, 0, 'x'> x;
@@ -94,6 +104,18 @@ TEST(Derivatives, Div)
     EXPECT_FLOAT_EQ(dy(2, 10), -2.0/(10.0 * 10.0));
 }
 
+TEST(Derivatives, Pow)
+{
+    Variable<double, 0, 'x'> x;
+    Variable<double, 1, 'y'> y;
+    auto f = x ^ y;
+    auto dxf = derivative<0>(f);    // dx x^y = y * x^(y-1)
+    auto dyf = derivative<1>(f);    // dy x^y = x^y ln(x)
+    EXPECT_NEAR(dxf(2, 2), 4, 0.00001);  // 2 * 2^1 = 4
+    EXPECT_NEAR(dxf(3, 4), 4* 27, 0.00001);            // 4 * 3^3 
+    EXPECT_NEAR(dyf(1, 5), 0, 0.00001);        // 1^5 * ln(1) = 0
+    EXPECT_NEAR(dyf(2, 0), std::log(2.0), 0.00001);                   // 2^0 * ln(2) = ln(2)
+}
 
 int main(int argc, char **argv)
 {

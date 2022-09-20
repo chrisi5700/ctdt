@@ -68,7 +68,8 @@
 					"source" : "tests",
 					"targetIndexes" : 
 					[
-						29
+						29,
+						34
 					]
 				},
 				{
@@ -171,7 +172,8 @@
 						26,
 						27,
 						28,
-						29
+						29,
+						34
 					]
 				},
 				{
@@ -456,6 +458,13 @@
 					"jsonFile" : "target-gtest_main-Debug-d81b6daf1336d026d18c.json",
 					"name" : "gtest_main",
 					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "unaryop::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-unaryop-Debug-64ec8839db511ab66081.json",
+					"name" : "unaryop",
+					"projectIndex" : 0
 				}
 			]
 		}

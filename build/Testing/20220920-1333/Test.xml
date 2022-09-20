@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-x86_64-linux-gnu-g++-11"
+	BuildStamp="20220920-1333-Experimental"
+	Name="chris-B450M-GAMING"
+	Generator="ctest-3.22.1"
+	CompilerName="/bin/x86_64-linux-gnu-g++-11"
+	CompilerVersion="11.2.0"
+	OSName="Linux"
+	Hostname="chris-B450M-GAMING"
+	OSRelease="5.15.0-47-generic"
+	OSVersion="#51-Ubuntu SMP Thu Aug 11 07:51:15 UTC 2022"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="23"
+	ModelID="8"
+	ProcessorCacheSize="512"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="2047"
+	TotalPhysicalMemory="15943"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2149.78"
+	>
+	<Testing>
+		<StartDateTime>Sep 20 16:15 CEST</StartDateTime>
+		<StartTestTime>1663683357</StartTestTime>
+		<TestList>
+			<Test>./tests/BinaryOperators</Test>
+			<Test>./tests/UnaryOperators</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>BinaryOperators</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/BinaryOperators</FullName>
+			<FullCommandLine>/home/chris/Documents/cpp/CTDerivatives/build/tests/binaryop</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.00270533</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/chris/Documents/cpp/CTDerivatives/build/tests/binaryop</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyFlE9PhDAQxe98ijm6Bxp2o0cPm6AejLpZ9EQ4AJ2VJtBuaAv67S2QIBZL58KfN78Hw8uQ3s+VwVlzzvgn7CNQKJWESysaOIwXIDUzRxKk4VwZPNWiyOupAXnHWsEb5KYZVaivVvPd0vVR81IxwWWQwvnjFcbKfm+TI6VGmurt2ZbgJoJG7lxwogsXbCQP/KJrF2wkDxyzzgUbyQOfRO+CjTTD/o86tYISKq93wQYRY8u6XLEOrSAWwjoKS/x3qmXPKg5L9BqsIrFEr8EqFkv0GqyisUR/OAtgKx7XSinM25CKngfpcmc3dhXanJO/jzITnI5J8hAP4w0oISR4rxDaARMXUOZ8tBBaXbWCPjc22IgOKUjGSwRmXuurRKRyaq4MWomaDvQ+OtxC8T3+J34A+/pI8Q==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<Test Status="passed">
+			<Name>UnaryOperators</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/UnaryOperators</FullName>
+			<FullCommandLine>/home/chris/Documents/cpp/CTDerivatives/build/tests/unaryop</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.00237729</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/chris/Documents/cpp/CTDerivatives/build/tests/unaryop</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyFkz1vwjAQhvf8ihthSFQqBhaGiq+hVUGknaIMhrrEUnIG+xL4+XUTlARkx7dY9j33+u6VLpm3kcK+RBR4ghkQ16ThV8kCXusL6FKYMwqSsI0UNrk8sLwBOFZCSSw4GphTWJ6f4GlfdV3ikYREHSSw//6EOtLuOYoFLqT+YmiAJrbvdgBGL1Do8YBQZsDMkNmAVst45Fa384ezpzrp6+eiaHFQ5Ozlnm9l/B42KJAklo+DgYolV6JiJCr+2F337vLdRlgHfQQdzjsgn6DF++estyer+xbAb39XNOS/a0WIMxX+yKuZp7+C7tUDxTCC0aT3k5lh9xbHq+X/kPfKKPgDYqImFg==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Sep 20 16:15 CEST</EndDateTime>
+		<EndTestTime>1663683357</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

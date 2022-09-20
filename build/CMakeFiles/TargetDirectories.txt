@@ -37,6 +37,7 @@
 /home/chris/Documents/cpp/CTDerivatives/build/CMakeFiles/install/local.dir
 /home/chris/Documents/cpp/CTDerivatives/build/CMakeFiles/install/strip.dir
 /home/chris/Documents/cpp/CTDerivatives/build/tests/CMakeFiles/binaryop.dir
+/home/chris/Documents/cpp/CTDerivatives/build/tests/CMakeFiles/unaryop.dir
 /home/chris/Documents/cpp/CTDerivatives/build/tests/CMakeFiles/package.dir
 /home/chris/Documents/cpp/CTDerivatives/build/tests/CMakeFiles/package_source.dir
 /home/chris/Documents/cpp/CTDerivatives/build/tests/CMakeFiles/test.dir

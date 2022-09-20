@@ -17,3 +17,9 @@ target_compile_features(binaryop PUBLIC cxx_std_20)
 target_link_libraries(binaryop  gtest_main)
 add_test(BinaryOperators binaryop)
 
+add_executable(unaryop unaryop.cpp)
+target_compile_options(unaryop PUBLIC -Wextra -Wpedantic -Weffc++)
+target_compile_features(unaryop PUBLIC cxx_std_20)
+target_link_libraries(unaryop  gtest_main)
+add_test(UnaryOperators unaryop)
+

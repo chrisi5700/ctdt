@@ -1,0 +1,91 @@
+Start testing: Sep 20 16:15 CEST
+----------------------------------------------------------
+1/2 Testing: BinaryOperators
+1/2 Test: BinaryOperators
+Command: "/home/chris/Documents/cpp/CTDerivatives/build/tests/binaryop"
+Directory: /home/chris/Documents/cpp/CTDerivatives/build/tests
+"BinaryOperators" start time: Sep 20 16:15 CEST
+Output:
+----------------------------------------------------------
+[==========] Running 10 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 5 tests from Functions
+[ RUN      ] Functions.Add
+[       OK ] Functions.Add (0 ms)
+[ RUN      ] Functions.Sub
+[       OK ] Functions.Sub (0 ms)
+[ RUN      ] Functions.Mul
+[       OK ] Functions.Mul (0 ms)
+[ RUN      ] Functions.Div
+[       OK ] Functions.Div (0 ms)
+[ RUN      ] Functions.Pow
+[       OK ] Functions.Pow (0 ms)
+[----------] 5 tests from Functions (0 ms total)
+
+[----------] 5 tests from Derivatives
+[ RUN      ] Derivatives.Add
+[       OK ] Derivatives.Add (0 ms)
+[ RUN      ] Derivatives.Sub
+[       OK ] Derivatives.Sub (0 ms)
+[ RUN      ] Derivatives.Mul
+[       OK ] Derivatives.Mul (0 ms)
+[ RUN      ] Derivatives.Div
+[       OK ] Derivatives.Div (0 ms)
+[ RUN      ] Derivatives.Pow
+[       OK ] Derivatives.Pow (0 ms)
+[----------] 5 tests from Derivatives (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 10 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BinaryOperators" end time: Sep 20 16:15 CEST
+"BinaryOperators" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: UnaryOperators
+2/2 Test: UnaryOperators
+Command: "/home/chris/Documents/cpp/CTDerivatives/build/tests/unaryop"
+Directory: /home/chris/Documents/cpp/CTDerivatives/build/tests
+"UnaryOperators" start time: Sep 20 16:15 CEST
+Output:
+----------------------------------------------------------
+[==========] Running 8 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from Functions
+[ RUN      ] Functions.SinCosTan
+[       OK ] Functions.SinCosTan (0 ms)
+[ RUN      ] Functions.SinhCoshTanh
+[       OK ] Functions.SinhCoshTanh (0 ms)
+[ RUN      ] Functions.ExpLn
+[       OK ] Functions.ExpLn (0 ms)
+[ RUN      ] Functions.SqrtCbrt
+[       OK ] Functions.SqrtCbrt (0 ms)
+[----------] 4 tests from Functions (0 ms total)
+
+[----------] 4 tests from Derivative
+[ RUN      ] Derivative.SinCosTan
+[       OK ] Derivative.SinCosTan (0 ms)
+[ RUN      ] Derivative.SinhCoshTanh
+[       OK ] Derivative.SinhCoshTanh (0 ms)
+[ RUN      ] Derivative.ExpLn
+[       OK ] Derivative.ExpLn (0 ms)
+[ RUN      ] Derivative.SqrtCbrt
+[       OK ] Derivative.SqrtCbrt (0 ms)
+[----------] 4 tests from Derivative (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 2 test suites ran. (1 ms total)
+[  PASSED  ] 8 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UnaryOperators" end time: Sep 20 16:15 CEST
+"UnaryOperators" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 20 16:15 CEST
