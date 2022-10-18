@@ -10,7 +10,7 @@ To run CTDT you need to use GCC 11 or higher to support floating point and class
 
 $f(x) \cdot \sin(0) = 0$  
 
-which is a GCC compiler feature but I hope future standards might support this.
+which is a GCC compiler feature but I hope future standards might support this (C++23).
 
 ### Example:
 
